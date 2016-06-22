@@ -28,4 +28,9 @@ class Person
   def to_s
     return "#{fullname} was born on #{dob}.\nTheir email addresses are: #{emails}.\nTheir phone numbers are: #{phone_numbers}"
   end
+
+  def print_details
+    puts "#{fullname}"
+    print "---------"
+  end
 end
