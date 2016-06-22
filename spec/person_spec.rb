@@ -35,7 +35,7 @@ describe "Person class" do
     expect(person.phone_numbers).to eq ["07712345678", "02012345678"]
   end
 
-  it "should remove the email" do
+  it "should remove the email at the specified position" do
     person = Person.new("joe", "bloggs", "1 Jan 1990")
 
     person.add_email "joe@foo.com"
@@ -44,5 +44,15 @@ describe "Person class" do
     person.remove_email(0)
 
     expect(person.emails).to eq ["joe.bloggs@work.com"]
+  end
+
+  it "should return personal information all as one string" do
+    person = Person.new("joe", "bloggs", "1 Jan 1990")
+
+    person.add_email "joe@foo.com"
+
+    person.add_phone "07712345678"
+
+    expect(person.to_s).to eq "Joe Bloggs was born on 1990-01-01.\nTheir email addresses are: [\"joe@foo.com\"].\nTheir phone numbers are: [\"07712345678\"]"
   end
 end

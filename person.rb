@@ -24,4 +24,8 @@ class Person
   def remove_email(position)
     @emails.delete_at position
   end
+
+  def to_s
+    return "#{fullname} was born on #{dob}.\nTheir email addresses are: #{emails}.\nTheir phone numbers are: #{phone_numbers}"
+  end
 end
