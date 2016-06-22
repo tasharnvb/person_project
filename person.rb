@@ -20,4 +20,8 @@ class Person
   def add_phone(number)
     @phone_numbers << number
   end
+
+  def remove_email(position)
+    @emails.delete_at position
+  end
 end
